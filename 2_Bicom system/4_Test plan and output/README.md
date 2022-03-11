@@ -1,6 +1,19 @@
 
 # Test Cases and Output
+## High level Test plan
 
+
+| ID    |  DECRIPTION                             |   Expected O/P   | Actual O/P |
+|-------|-----------------------------------------|------------------|------------|
+| HLR1  |    Display the status of window         |   All LED On     | All LED On |
+| HLR2  |      DISPLAY alarm status               |   All LED Off    | Partial O/P|
+| HLR3  |    Display car battery info             |  Clockwise Leds  |   ----     |
+| HLR4  |   Display the status of door            |Anticlockwise Leds|   ----     |
+
+
+
+
+## low level test plan 
 | ID   |  Description                                                    |   Expected O/P   | Actual O/P |
 |------|-----------------------------------------------------------------|------------------|------------|   
 | LLR1 | switch on -All led on at the same time                          |   All LED On     | All LED On |
