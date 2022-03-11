@@ -36,14 +36,15 @@ Can be used anywhere at short distance
 Press on the blue switch and using LED’S ON and OFF as per the requirements.
 
 # Requirements:
-# High level requirements:
- HLR01 -  display the status of window
- 
- HLR02- display the status of DOOR
- 
- HLR03-- DISPLAY alarm status
- 
- HLR04 -- DISPLAY car battery info
+# High level requirements
+
+| ID   |  Description                    |
+|------|---------------------------------|
+|HLR01 | Display the status of window    |
+|HLR02 | DISPLAY alarm status            |
+|HLR03 | DISPLAY car battery info        |
+| HLR04| Display the status of door      |
+
 
 # Low level requirements:
  LLR1 - switch on- All led on at the same time
