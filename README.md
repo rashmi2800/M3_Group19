@@ -4,10 +4,10 @@
 
 | Contents | Accomplished By |
 |---|---|
-| 1_Remote_Keyless_Entry code 3_Implementation | All by Gmeet |
-| 1_Remote_Keyless_Entry Git Repo | All members in group contribute 25% each other |
-| 2_BiCom_System code 3_Implementation | All by Gmeet |
-| 2_BiCom_System Git Repo | All members in group contribute 25% each other |
+| 1st Implementation part | All by Gmeet |
+| Git Repo | All members in group contribute 25% each other |
+| 2nd Implementation part | All by Gmeet |
+| Git Repo | All members in group contribute 25% each other |
 
 
 ---
