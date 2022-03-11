@@ -47,10 +47,10 @@ Press on the blue switch and using LED’S ON and OFF as per the requirements.
 
 
 # Low level requirements:
- LLR1 - switch on- All led on at the same time
- 
- LLR2 - switch press two times- All led off at the same time
- 
- LLR3 - switch press three times- All led on in clockwise manner
- 
- LLR4 -- switch press four times- All led on in anti-clockwise manner
+
+| ID   |  Description                                                    |
+|------|-----------------------------------------------------------------|
+| LLR1 | switch on -All led on at the same time                          |
+| LLR2 | switch press two times- All led off at the same time            |
+|LLR3  |switch press three times- All led on in clockwise manner         |
+| LLR4 | switch press four times- All led on in anti-clockwise manner    |
