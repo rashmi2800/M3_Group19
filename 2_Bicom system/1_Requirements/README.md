@@ -21,10 +21,29 @@
    F] The status of all the above system can be verified through the led's.
 
 # SWOT Analysis:
+[swot m3 final.docx](https://github.com/rashmi2800/M3_Group19/files/8232587/swot.m3.final.docx)
 
 # 4W's And 1H:
+# Who
+People having automobile and need to secure it
+# What
+Bi com system - Allows the people to lock and unlock the car
+# When
+Whenever we need to lock and unlock the system
+# Where
+Can be used anywhere at short distance
+# How
+Press on the blue switch and using LED’S ON and OFF as per the requirements.
 
 # Requirements:
 # High level requirements:
+ HLR01 -  display the status of window
+ HLR02- display the status of DOOR
+ HLR03-- DISPLAY alarm status
+ HLR04 -- DISPLAY car battery info
 
 # Low level requirements:
+ LLR1 - switch on- All led on at the same time
+ LLR2 - switch press two times- All led off at the same time
+ LLR3 - switch press three times- All led on in clockwise manner
+ LLR4 -- switch press four times- All led on in anti-clockwise manner
