@@ -33,3 +33,8 @@
 |  4_Test plan and output | High level and Low level Test plan |
 |  5_Report |  |
 |  6_ImagesandVideos | Supporting copies of our project |
+
+
+
+## BADGES 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/435a67cff4834724a24a8e6f4ec99496)](https://www.codacy.com/gh/rashmi2800/M3_Group19/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rashmi2800/M3_Group19&amp;utm_campaign=Badge_Grade)
