@@ -1,4 +1,4 @@
-# 1. Architecture
+# 1. ARCHITECTURE:
 
 * ## 1A. Behavioural Diagrams
     * ###  High Level Flow chart Behavioural Diagram
