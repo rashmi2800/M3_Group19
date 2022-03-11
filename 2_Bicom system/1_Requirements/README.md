@@ -38,12 +38,18 @@ Press on the blue switch and using LED’S ON and OFF as per the requirements.
 # Requirements:
 # High level requirements:
  HLR01 -  display the status of window
+ 
  HLR02- display the status of DOOR
+ 
  HLR03-- DISPLAY alarm status
+ 
  HLR04 -- DISPLAY car battery info
 
 # Low level requirements:
  LLR1 - switch on- All led on at the same time
+ 
  LLR2 - switch press two times- All led off at the same time
+ 
  LLR3 - switch press three times- All led on in clockwise manner
+ 
  LLR4 -- switch press four times- All led on in anti-clockwise manner
