@@ -21,7 +21,8 @@
    F] The status of all the above system can be verified through the led's.
 
 # SWOT Analysis:
-[swot m3 final.docx](https://github.com/rashmi2800/M3_Group19/files/8232587/swot.m3.final.docx)
+![m3 swot](https://user-images.githubusercontent.com/99154929/157888491-faed9dfd-6928-486a-ada9-313fea620cfa.jpg)
+
 
 # 4W's And 1H:
 # Who
