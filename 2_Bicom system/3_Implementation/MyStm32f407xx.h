@@ -13,7 +13,7 @@
 #define __vo volatile
 #define __weak __attribute__((weak))
 
-
+int Button_Count(void); 
 
 /**********************************START:Processor Specific Details **********************************/
 /*
