@@ -19,7 +19,7 @@
 |  2_Architecture | Behavioral Diagrams,Structural UML Diagram |
 |  3_Implementation | main.c, driver_fun.c,driver_fun.h, Linker File, Startup File, Makefile, README.md |
 |  4_Test plan and output | High level and Low level Test plan |
-|  5_Report |  |
+|  5_Report | uploaded in pdf format |
 |  6_ImagesandVideos | Supporting copies of our project |
 
 ---
@@ -31,7 +31,7 @@
 |  2_Architecture | Behavioral Diagrams,Structural UML Diagram |
 |  3_Implementation | main.c, driver_fun.c,driver_fun.h, Linker File, Startup File, Makefile, README.md |
 |  4_Test plan and output | High level and Low level Test plan |
-|  5_Report |  |
+|  5_Report | uploaded in pdf format |
 |  6_ImagesandVideos | Supporting copies of our project |
 
 
