@@ -8,6 +8,23 @@
 
 #include "MyStm32f407xx_gpio_driver.h"
 
+const int en1 = 1; // Keeps en1 constant throughout the program
+const int en2 = 2; // Keeps en2 constant throughout the program
+const int en3 = 3; // Keeps en3 constant throughout the program
+const int en4 = 4;
+
+int encryption(int enc) // Helps in Data Encryption
+{
+	if (enc == en1)
+		return 1+1;
+	else if (enc == en2)
+		return 2+2;
+	else if (enc == en3)
+		return 3+3;
+	else if (enc == en4)
+		return 4+4;
+	return 0;
+}
 /*********************************************************************
  * @fn      		  - GPIO_PeriClockControl
  *

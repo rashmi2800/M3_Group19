@@ -1,10 +1,14 @@
-#include "MyStm32f407xx.h"
-
-/*
- * Defining Push Button 
+/**
+ * @file main.c
+ * @author Vivekanand B S (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-03-12
+ * 
+ * @copyright Copyright (c) 2022
+ * 
  */
-#define BTN_PRESSED ENABLE
-#define BTN_PRESSED_1 DISABLE
+#include "MyStm32f407xx.h"
 
 /*
  * Declaration of functions
@@ -15,37 +19,48 @@ void Lock(void);
 void Unlock(void);
 void Alarm_activation(void);
 void Approach_light(void);
-
+int Button_Count(void);
 /*
  * definition of delay function
  */
-void delay(void)
+ void delay(uint32_t time) // Provides Require Delay
 {
-	for ( uint32_t i=0 ; i<500000 ; i++);
+	for (uint32_t i = 0; i < time * 1000000; i++){
+	}
 }
 
 int main(void)
 {	
 	Init_PushButton();		// Initialising Push Button
 	Init_LedPins(); 		// Initialising LedPins
-
 	while(1)
 	{	
-		if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED)
+		int result;  
+		result = Button_Count();
+		volatile int enc_data = encryption(result);
+		if(enc_data==2)
     	{
 			Lock();
+			result = 0;
+			Button_Count();
     	}
-    	else if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED_1)
+    	else if(enc_data==4)
     	{
     	    Unlock();
+			result = 0;
+			Button_Count();
     	}
-		else if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED)
+		else if(enc_data==6)
 		{
 			Alarm_activation();
+			result = 0;
+			Button_Count();
 		}
-		else if(GPIO_ReadFromInputPin(GPIOA, GPIO_PIN_NO_0) == BTN_PRESSED_1)
+		else if(enc_data==8)
 		{
 			Approach_light();
+			result = 0;
+			Button_Count();
 		}
 	}
 }
@@ -109,22 +124,26 @@ void Init_LedPins(void)
  */
 void Lock(void)
 {
-	delay();
+	Init_PushButton();		// Initialising Push Button
+	Init_LedPins(); 		// Initialising LedPins
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
+	delay(400);
 }
 /*
  * Defining a function that makes all Leds Off
  */
 void Unlock(void)
 {
-	delay();
+	Init_PushButton();		// Initialising Push Button
+	Init_LedPins(); 		// Initialising LedPins
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
+	delay(400);
 }
 /*
  * Defining a function that Make leds On in a clockwise manner
@@ -132,56 +151,64 @@ void Unlock(void)
 
 void Alarm_activation(void)
 {
-	delay();
+	Init_PushButton();		// Initialising Push Button
+	Init_LedPins(); 		// Initialising LedPins
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
+	delay(100);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
+	delay(100);
 	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
+	delay(100);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
+	delay(400);
 }
 /*
  * Defining a function that Make leds On in a Anticlockwise manner
  */
 void Approach_light(void)
 {
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
+	Init_PushButton();		// Initialising Push Button
+	Init_LedPins(); 		// Initialising LedPins
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,1);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
-
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,1);
+	delay(100);
     GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,1);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
+	delay(100);
+	GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
+	delay(100);
+    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,0);
+	delay(400);
+}
 
-	delay();
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_12,1);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_13,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_14,0);
-    GPIO_WriteToOutputPin(GPIOD, GPIO_PIN_NO_15,0);
+// Button count function 
+
+int Button_Count(void)    
+{
+	int count = 0; // button count is initialized to zero
+	uint32_t *pGpiodDataReg1 = (uint32_t *)0x40020010; 
+	int sec = 10000000; 
+	while (sec--)
+	{
+		if ((*pGpiodDataReg1) & (1 << GPIO_PIN_NO_0)) // Read input from pin number 0 (Push button)
+		{ 
+			delay(200);
+			count++; // inceremnt count
+		}
+	}
+	return count; // Returns no of key presses
 }
